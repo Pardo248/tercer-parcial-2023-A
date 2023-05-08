@@ -15,11 +15,12 @@ public class ShoppingCart{
     public ShoppingCart(ShoppingItemCatalog shoppingItemCatalog) {
         this.shoppingItemCatalog = shoppingItemCatalog;
         this.shoppingItemlist = shoppingItemlist;
-        this.cost = cost;
-        this.itenmsCount = itemsCount;
+        this.cost = getTotalCostInCents();
+        this.totalItems = getTotalItemsCount();
     }
     public void add(String code) {
-
+        ShoppingItem item1 = shoppingItemCatalog.getItem(code);
+        shoppingItemlist.add(item1);
     }
 
     public int getTotalCostInCents() {
